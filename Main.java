@@ -12,11 +12,11 @@ public class Main {
             "Giovanna Alexandre dos Santos",
             "Ronaldo Felipo Andrade"};
         int[] listaSalarios = {1380,900,6900,160,1800};
-        
+
         System.out.println("\n====== Requisições Admissão ======");
         for(int i=0;i<listaAdmissao.length;i++) {
             try {
-                funcionarios.add(new Funcionario(listaAdmissao[i],listaSalarios[i]));
+                funcionarios.add(new Funcionario(listaAdmissao[i],listaSalarios[i]));  
             } catch (ViolacaoCltException e) {
                 System.out.println(e.getMessage() + e.getCodigo());
             } catch (IllegalArgumentException e) {
@@ -25,7 +25,6 @@ public class Main {
         }
         
         System.out.println("\n======= Aumentos Salariais =======");
-        
         try {
             funcionarios.get(0).setSalario(1450);
         } catch (AumentoAbsurdoException e) {
@@ -45,7 +44,8 @@ public class Main {
         System.out.println("\n========= Registro Final =========");
         for (Funcionario f : funcionarios) {
             System.out.println(f.getNome());
-            System.out.println(f.getSalario());
+            System.out.println("Matricula: " + f.getMatricula());
+            System.out.println("Salario: " + f.getSalario());
         }
     }
 }
