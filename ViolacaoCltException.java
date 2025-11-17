@@ -1,5 +1,3 @@
-package T4;
-
 public class ViolacaoCltException extends IllegalArgumentException {
     int codigoClt;
 
