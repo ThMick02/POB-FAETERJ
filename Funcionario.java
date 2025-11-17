@@ -1,15 +1,12 @@
 package T4;
 
-import java.util.Random;
-
 public class Funcionario {
+    private static int proxMatricula=0;
     private String nome;
     private int matricula;
     private double salario;
 
     public Funcionario(String n, double s) throws IllegalArgumentException, ViolacaoCltException {
-        Random random = new Random();
-        this.matricula=random.nextInt(100);
         if (n.length()>40) {
             throw new IllegalArgumentException ("Requisição negada: o nome '" + n + "' excede o limite de 40 caracteres.");
         }
@@ -17,7 +14,8 @@ public class Funcionario {
             throw new ViolacaoCltException ("Requisição negada: valor do salario atribuído a " + n + " violam os direitos garantidos na Clt pelo Art. ", 76);
         }
         else {
-        this.matricula=random.nextInt(100);
+        this.matricula=proxMatricula;
+        proxMatricula++;
         this.nome=n;
         this.salario=s;
         }
