@@ -1,5 +1,3 @@
-package T4;
-
 public class Funcionario {
     private static int proxMatricula=0;
     private String nome;
